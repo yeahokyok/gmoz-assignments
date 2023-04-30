@@ -9,10 +9,16 @@ def degree_to_time(degree):
     return f"{clock_hours:02.0f}:{clock_minutes:02.0f}"
 
 
-print(degree_to_time(0))
-print(degree_to_time(28))
-print(degree_to_time(60))
-print(degree_to_time(180))
-print(degree_to_time(202))
-print(degree_to_time(300))
-print(degree_to_time(345))
+test_cases = [
+    (0, "00:00"),
+    (28, "00:56"),
+    (60, "02:00"),
+    (180, "06:00"),
+    (202, "06:44"),
+    (300, "10:00"),
+]
+
+for input, expected in test_cases:
+    result = degree_to_time(input)
+    assert result == expected, f"Input: {input}, Output: {result}, Expected: {expected}"
+    print(f"Input: {input}, Output: {result}")

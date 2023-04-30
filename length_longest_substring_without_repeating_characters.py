@@ -23,15 +23,25 @@ def length_longest_substring_without_repeating_characters(input):
     return longest_length
 
 
-input = """aaaaaabbbbbbbbbbbbbcccccccc
+test_cases = [
+    ("pwwkew", 3),
+    ("abcabcbb", 3),
+    ("bbbbb", 1),
+    ("", 0),
+    (
+        """aaaaaabbbbbbbbbbbbbcccccccc
 abcdefgh
 aabbccddee
 aaaaccccddddd
 abcdefgabcdefgh
 bbbbcccccccccccccbbbbbb
 aaaaaaaaaaaaaaa
-abbbbbbbbbbbaaaaaa"""
+abbbbbbbbbbbaaaaaa""",
+        8,
+    ),
+]
 
-# input = "pwwkew"
-# input = "abcabcbb"
-print(length_longest_substring_without_repeating_characters(input))
+for input, expected in test_cases:
+    result = length_longest_substring_without_repeating_characters(input)
+    assert result == expected, f"Input: {input}, Output: {result}, Expected: {expected}"
+    print(f"Input: {input}, Output: {result}")
